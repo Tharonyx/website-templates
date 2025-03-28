@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Wedding Planner</title>
+</head>
+
+<body class="bg-orange-100 text-black">
+
+    <!-- Navigation Bar -->
+    <nav class="flex justify-between items-center px-6 md:px-16 py-6">
+        <div class="flex space-x-8 text-lg">
+            <a href="#" class="hover:text-gray-500">About</a>
+            <a href="#" class="hover:text-gray-500">Weddings</a>
+            <a href="#" class="hover:text-gray-500">Events</a>
+            <a href="#" class="hover:text-gray-500">Contact</a>
+        </div>
+        <div class="text-lg font-semibold flex items-center space-x-2">
+            <span class="text-red-500">◆</span>
+            <span>Descon</span>
+        </div>
+        <button class="bg-red-500 text-white px-5 py-2 rounded-md hover:bg-red-600">
+            Let's talk
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="flex flex-col md:flex-row items-center justify-between px-6 md:px-16 py-12">
+        <!-- Text Content -->
+        <div class="md:w-1/2 space-y-6">
+            <h1 class="text-5xl font-bold leading-tight">
+                Hi There <br>
+                This is — <br>
+                Sanches Liza
+            </h1>
+            <p class="text-gray-600 text-lg mr-12">
+                Passionate Floral Designer and Wedding Planner, crafting unforgettable moments with elegance and creativity for life's most cherished celebrations.
+            </p>
+            
+            <button class=" bg-[#B03030] text-white px-6 py-3 rounded-md hover:bg-red-600">
+                Get in touch
+            </button>
+        </div>
+
+
+      <!-- Image Section -->
+<div class="relative md:w-1/2 mt-12 md:mt-0">
+    <!-- Main Image -->
+    <img src="https://images.pexels.com/photos/1439259/pexels-photo-1439259.jpeg?auto=compress&cs=tinysrgb&w=600"
+        class="rounded-lg shadow-lg h-[40rem] w-[40rem] object-cover" alt="Wedding Planner">
+
+    <!-- Rotated Rectangle Image at Top Right -->
+    <div class="absolute top-0 right-0 w-32 h-20 -mt-6 -mr-6 border-4 border-white overflow-hidden shadow-md rotate-90">
+        <img src="https://images.pexels.com/photos/931180/pexels-photo-931180.jpeg?auto=compress&cs=tinysrgb&w=600"
+            class="w-full h-full object-cover" alt="Rotated Rectangle Image">
+    </div>
+
+    <!-- Half-Pill Image at Bottom Left -->
+    <div class="absolute bottom-0 left-0 w-24 h-28 -mb-6 -ml-6 border-4 border-white rounded-t-full overflow-hidden shadow-md">
+        <img src="https://images.pexels.com/photos/931180/pexels-photo-931180.jpeg?auto=compress&cs=tinysrgb&w=600"
+            class="w-full h-full object-cover" alt="Half-Pill Image">
+    </div>
+</div>
+    </section>
+
+    <section class="bg-orange-100 py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="text-sm uppercase tracking-widest text-[#D19C75]">My Services</span>
+            <h2 class="text-4xl font-semibold text-gray-900 mt-2">All you need is on me</h2>
+            <p class="text-gray-600 mt-3">
+                I will take care of everything for you, from event planning and curation to design and production.
+            </p>
+        </div>
+    
+        <!-- Services Grid -->
+        <div class="grid md:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
+            <!-- Service 1 -->
+            <div class="relative group">
+                <img src="https://images.pexels.com/photos/1802253/pexels-photo-1802253.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-96 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" alt="Venue Dressing">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="text-white text-center">
+                        <h3 class="text-xl font-semibold">Venue Dressing</h3>
+                        <a href="#" class="text-sm underline">Learn more</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Service 2 -->
+            <div class="relative group">
+                <img src="https://images.pexels.com/photos/3014930/pexels-photo-3014930.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-96 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" alt="Wedding Photography">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="text-white text-center">
+                        <h3 class="text-xl font-semibold">Wedding Photography</h3>
+                        <a href="#" class="text-sm underline">Learn more</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Service 3 -->
+            <div class="relative group">
+                <img src="https://images.pexels.com/photos/4661607/pexels-photo-4661607.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-96 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105" alt="Event Planning">
+                <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div class="text-white text-center">
+                        <h3 class="text-xl font-semibold">Event Planning</h3>
+                        <a href="#" class="text-sm underline">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="bg-[#FDF3E7] py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-semibold text-gray-900">On Instagram</h2>
+            <p class="text-gray-600 mt-2">
+                Follow me <a href="mailto:design@shoparc.com" class="underline text-[#D19C75]">design@shoparc.com</a>
+            </p>
+        </div>
+    
+        <!-- Instagram Grid -->
+        <div class="grid md:grid-cols-3 grid-cols-2 gap-4 mt-12 max-w-6xl mx-auto">
+            <!-- Image Card -->
+            <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/3217956/pexels-photo-3217956.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Wedding Toast">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-semibold">Cheers to Love 🥂</p>
+                </div>
+            </div>
+    
+            <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/31271995/pexels-photo-31271995/free-photo-of-elegant-outdoor-wedding-in-mendoza-argentina.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Bride & Groom">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-semibold">Forever Begins 💍</p>
+                </div>
+            </div>
+    
+            <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/1702373/pexels-photo-1702373.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Wedding Cake">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-semibold">Sweet Moments 🍰</p>
+                </div>
+            </div>
+    
+            <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/30476319/pexels-photo-30476319/free-photo-of-elegant-couple-in-ornate-staircase-setting.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Bride on Stairs">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-semibold">Elegant Beauty 👑</p>
+                </div>
+            </div>
+    
+            <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/31307956/pexels-photo-31307956/free-photo-of-elegant-outdoor-indian-wedding-decoration-in-delhi.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Decorations">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-semibold">Dreamy Decor ✨</p>
+                </div>
+            </div>
+    
+            <div class="relative group overflow-hidden rounded-lg shadow-lg">
+                <img src="https://images.pexels.com/photos/3352398/pexels-photo-3352398.jpeg?auto=compress&cs=tinysrgb&w=600" 
+                     class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105" alt="Wedding Couple">
+                <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <p class="text-white text-lg font-semibold">Happily Ever After ❤️</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-16 px-6 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-semibold text-gray-900">Are you ready to plan a special day?</h2>
+            <p class="text-gray-600 mt-2">
+                We will take care of everything for you, from event planning and curation to design and production.
+            </p>
+            <a href="#" class="mt-6 inline-block bg-[#B03030] text-white text-lg font-medium py-3 px-6 rounded-lg shadow-md transition-all duration-300 hover:bg-[#922828] hover:shadow-lg">
+                Let's talk
+            </a>
+        </div>
+    </section>
+     
+    <footer class="bg-[#FEF6F0] py-12 text-center text-gray-700">
+        <div class="max-w-5xl mx-auto px-6">
+            <!-- Logo -->
+            <div class="mb-6">
+                <span class="text-lg font-semibold text-gray-900">Descon</span>
+            </div>
+    
+            <!-- Navigation Links -->
+            <nav class="flex justify-center space-x-6 text-gray-700 font-medium">
+                <a href="#" class="hover:underline hover:text-gray-900">Home</a>
+                <a href="#" class="hover:underline hover:text-gray-900">About us</a>
+                <a href="#" class="hover:underline hover:text-gray-900">Menu</a>
+                <a href="#" class="hover:underline hover:text-gray-900">Blog</a>
+                <a href="#" class="hover:underline hover:text-gray-900">Contact us</a>
+            </nav>
+    
+            <!-- Contact & Working Hours -->
+            <div class="grid md:grid-cols-2 gap-8 text-gray-800 mt-8">
+                <div class="border p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold">Contact us</h3>
+                    <p class="text-gray-600">New York, America</p>
+                    <p class="text-gray-600">+201824817940</p>
+                </div>
+                <div class="border p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold">Working hours</h3>
+                    <p class="text-gray-600">Monday-Friday: 08:00 - 05:00</p>
+                    <p class="text-gray-600">Saturday-Sunday: 08:00 - 05:00</p>
+                </div>
+            </div>
+    
+            <!-- Social Media Icons with Links -->
+            <div class="flex justify-center space-x-6 mt-8 text-gray-600">
+                <a href="https://www.instagram.com" target="_blank" class="hover:text-gray-900">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" class="hover:text-gray-900">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="hover:text-gray-900">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" class="hover:text-gray-900">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+            </div>
+    
+            <!-- Copyright -->
+            <p class="text-gray-500 text-sm mt-6">
+                Copyright Template by <span class="font-semibold">Descon</span> - Powered by <span class="font-semibold">Descon</span>
+            </p>
+    
+            <!-- Additional Links -->
+            <div class="flex justify-center space-x-6 text-sm text-gray-500 mt-4">
+                <a href="#" class="hover:underline hover:text-gray-900">Style Guide</a>
+                <a href="#" class="hover:underline hover:text-gray-900">License</a>
+                <a href="#" class="hover:underline hover:text-gray-900">Changelog</a>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
