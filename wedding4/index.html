@@ -9,11 +9,97 @@
 
     <!-- Include Google Font for stylish heading -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
     <style>
+        html, body {
+    
+    overflow-x: hidden;
+        }
+
         .bg-custom-beige {
             background-color: #F5EEDC;
+            .carousel-container {
+            perspective: 1000px;
+            touch-action: pan-y pinch-zoom;
         }
+
+        .carousel-track {
+            transform-style: preserve-3d;
+            transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .carousel-item {
+            backface-visibility: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+            transform: scale(1) translateZ(0);
+        }
+
+        @media (max-width: 640px) {
+            .carousel-item.prev {
+                opacity: 0;
+                transform: scale(0.8) translateX(-50%) translateZ(-100px);
+            }
+
+            .carousel-item.next {
+                opacity: 0;
+                transform: scale(0.8) translateX(50%) translateZ(-100px);
+            }
+        }
+
+        @media (min-width: 641px) {
+            .carousel-item.prev {
+                opacity: 0.7;
+                transform: scale(0.9) translateX(-100%) translateZ(-100px);
+            }
+
+            .carousel-item.next {
+                opacity: 0.7;
+                transform: scale(0.9) translateX(100%) translateZ(-100px);
+            }
+        }
+
+        .carousel-item.hidden {
+            opacity: 0;
+            transform: scale(0.8) translateZ(-200px);
+        }
+
+        .nav-button {
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        @media (hover: hover) {
+            .nav-button:hover {
+                background: rgba(255, 255, 255, 0.2);
+                transform: scale(1.1);
+            }
+        }
+
+        .nav-button:active {
+            transform: scale(0.95);
+        }
+
+        .progress-bar {
+            transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }    
+        }
+        @keyframes marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+        display: flex;
+        animation: marquee 15s linear infinite;
+        width: 200%;
+    }
     </style>
 </head>
 
@@ -21,12 +107,12 @@
     <!-- Navigation Bar -->
     <nav class="w-full bg-transparent flex justify-between p-6 text-sm fixed top-0 left-0 z-10">
         <div class="text-black font-bold">Starline</div>
-        <div class="flex space-x-6">
+        <div class="flex space-x-20">
             <a href="#" class="hover:text-blue-500">ABOUT</a>
             <a href="#" class="hover:text-blue-500">SERVICES</a>
             <a href="#" class="hover:text-blue-500">PORTFOLIO</a>
             <a href="#" class="hover:text-blue-500">SHOP</a>
-            <button class="bg-blue-500 text-white py-1 px-4 rounded hover:bg-blue-600">
+            <button class=" text-black py-2 px-6 border border-1 border-black">
                 BOOK NOW
             </button>
         </div>
@@ -55,15 +141,15 @@
             <div class="border-l-2 border-black h-[50rem]"></div> <!-- 2px thick line with a height of 32px -->
 
             <!-- Right Section -->
-            <div class="md:w-[50rem] ml-20">
-                <p class="text-2xl w-[20rem] text-gray-900 mb-6">
+            <div class="md:w-[70rem] ml-20">
+                <p class="text-2xl w-[50rem] text-gray-900 mb-6">
                     <span class="text-sm"> BRAND & SHOWIT WEBSITE DESIGNER</span> <br><br>
-                    <span class="heading-font running-text">LUXURY BRANDS &</span> <br>
-                    <span class="heading-font running-text">WEBSITE DESIGNS</span> <br>
-                    <span class="heading-font running-text">FOR WEDDING PROS &</span> <br>
-                    <span class="heading-font running-text">AMBITIOUS CREATIVES</span>
+                    <span class="heading-font text-5xl">LUXURY BRANDS &</span> <br>
+                    <span class="heading-font text-5xl">WEBSITE DESIGNS</span> <br>
+                    <span class="heading-font text-5xl">FOR WEDDING PROS &</span> <br>
+                    <span class="heading-font text-5xl">AMBITIOUS CREATIVES</span>
                 </p>
-                <button class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600">
+                <button class="text-black py-2 px-6 border border-1 border-black">
                     INQUIRE NOW
                 </button>
             </div>
@@ -71,64 +157,91 @@
     </section>
 
     <!-- Next Section -->
-    <section class="relative text-black w-full">
-        <div class="border border-1 border-black w-full"></div>
-        <div class="max-w-screen-lg mx-auto text-center mt-20 mb-20">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">
-                Ready to align your brand with your premium services & attract high budget clients?</h2>
-            <br>
-            <p> &#9733;</p>
-            <br>
-            <br>
-            <p class="text-sm text-gray-700 mb-6 w-[60rem]">
-                Your brand is the first impression potential clients have of your business, and it should reflect the
-                quality and value of your services.
-                We specialize in creating high-end, creative brands that connect with your target audience and set you
-                apart from your competition.
-            </p>
-            <p class="text-sm text-gray-700">
-                Based in sunny Brisbane, we serve brands from all around the world.
-            </p>
+    <section class="relative text-black w-full bg-[url('https://img.freepik.com/free-photo/blurred-picture-kissing-wedding-couple-standing-before-gorgeous-mountain-landscape_8353-8491.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid')] bg-cover bg-center bg-no-repeat">
+        <!-- Overlay for Orangish Shade -->
+        <div class="absolute inset-0 bg-orange-100 opacity-40"></div>
+    
+        <!-- Content -->
+        <div class="relative z-10">
+            <div class="border border-1 border-black w-full"></div>
+            <div class="max-w-screen-lg mx-auto text-center mt-20 mb-20">
+                <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                    Ready to align your brand with your premium services & attract high budget clients?
+                </h2>
+                <br>
+                <p> &#9733;</p>
+                <br>
+                <br>
+                <p class="text-sm text-gray-900 mb-6 max-w-4xl mx-auto">
+                    Your brand is the first impression potential clients have of your business, and it should reflect the
+                    quality and value of your services.
+                    We specialize in creating high-end, creative brands that connect with your target audience and set you
+                    apart from your competition.
+                </p>
+                <p class="text-sm text-gray-900">
+                    Based in sunny Brisbane, we serve brands from all around the world.
+                </p>
+            </div>
+            <div class="border border-1 border-black w-full"></div>
         </div>
-        <div class="border border-1 border-black w-full"></div>
-
     </section>
+    
 
-    <section class="w-full bg-white text-black py-16">
-        <div class="max-w-screen-lg mx-auto text-center px-6">
-            <h2 class="text-4xl font-bold mb-8">Our Clients Have Been Featured In</h2>
-            <br>
-            <br>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center">
-                <!-- Country Living Logo -->
-                <div class="flex justify-center">
+   <section class="w-full bg-white text-black py-16 overflow-hidden">
+    <div class="max-w-screen-lg mx-auto text-center px-6">
+        <h2 class="text-4xl font-bold mb-8">Our Clients Have Been Featured In</h2>
+        <br><br>
+
+        <!-- Marquee Container -->
+        <div class="relative w-full flex overflow-hidden">
+            <div class="flex space-x-10 animate-marquee">
+                <!-- Logos (Duplicate them for smooth looping) -->
+                <div class="flex justify-center min-w-[150px]">
                     <img src="https://www.countryliving.com/_assets/design-tokens/countryliving/static/images/logos/logo.42faf13.svg?primary=%25230A5C80"
                         alt="Country Living Logo" class="h-16">
                 </div>
-                <!-- Oprah Daily Logo -->
-                <div class="flex justify-center">
+                <div class="flex justify-center min-w-[150px]">
                     <img src="https://th.bing.com/th/id/OIP.3AH8V8SwNhZci9ALpBwxMgHaCx?w=327&h=131&c=7&r=0&o=5&dpr=1.3&pid=1.7"
                         alt="Oprah Daily Logo" class="h-16">
                 </div>
-                <!-- Insider Logo -->
-                <div class="flex justify-center">
+                <div class="flex justify-center min-w-[150px]">
                     <img src="https://th.bing.com/th/id/OIP.BH8-9J4PLDLzgkGmue_wGQAAAA?w=252&h=149&c=7&r=0&o=5&dpr=1.3&pid=1.7"
                         alt="Insider Logo" class="h-16">
                 </div>
-                <!-- Elite Daily Logo -->
-                <div class="flex justify-center">
+                <div class="flex justify-center min-w-[150px]">
                     <img src="https://th.bing.com/th/id/OIP.ZqJ6v1iXeMDfFsosMXXOkQHaDh?w=339&h=166&c=7&r=0&o=5&dpr=1.3&pid=1.7"
                         alt="Elite Daily Logo" class="h-16">
                 </div>
-                <!-- Medium Logo -->
-                <div class="flex justify-center">
+                <div class="flex justify-center min-w-[150px]">
+                    <img src="https://th.bing.com/th/id/OIP.aF1lCcPXuAJimX7M2Lk9VwHaEo?w=288&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                        alt="Medium Logo" class="h-16">
+                </div>
+
+                <!-- Duplicate logos for smooth infinite scrolling -->
+                <div class="flex justify-center min-w-[150px]">
+                    <img src="https://www.countryliving.com/_assets/design-tokens/countryliving/static/images/logos/logo.42faf13.svg?primary=%25230A5C80"
+                        alt="Country Living Logo" class="h-16">
+                </div>
+                <div class="flex justify-center min-w-[150px]">
+                    <img src="https://th.bing.com/th/id/OIP.3AH8V8SwNhZci9ALpBwxMgHaCx?w=327&h=131&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                        alt="Oprah Daily Logo" class="h-16">
+                </div>
+                <div class="flex justify-center min-w-[150px]">
+                    <img src="https://th.bing.com/th/id/OIP.BH8-9J4PLDLzgkGmue_wGQAAAA?w=252&h=149&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                        alt="Insider Logo" class="h-16">
+                </div>
+                <div class="flex justify-center min-w-[150px]">
+                    <img src="https://th.bing.com/th/id/OIP.ZqJ6v1iXeMDfFsosMXXOkQHaDh?w=339&h=166&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                        alt="Elite Daily Logo" class="h-16">
+                </div>
+                <div class="flex justify-center min-w-[150px]">
                     <img src="https://th.bing.com/th/id/OIP.aF1lCcPXuAJimX7M2Lk9VwHaEo?w=288&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
                         alt="Medium Logo" class="h-16">
                 </div>
             </div>
         </div>
-        <br><br>
-    </section>
+    </div>
+</section>
     <div class="border border-1 border-black w-full"></div>
 
     <section class="w-full text-black py-16">
@@ -222,7 +335,7 @@
                     Photographers ・ Videographers ・ Therapists ・ Wellness Coaches ・ Interior Designers ・ Women-owned Businesses ・ Event Planners ・ Florists
                 </p>
                 <div class="mt-6">
-                    <button class="bg-blue-500 text-white py-2 px-6 rounded-lg hover:bg-blue-600">INQUIRE NOW</button>
+                    <button class=" text-black py-2 px-6 border border-1 border-black">INQUIRE NOW</button>
                 </div>
             </div>
     
@@ -262,8 +375,249 @@
         </div>
     </section>
     
+    <section class=" py-12">
+        <div class="max-w-5xl mx-auto text-center mb-6">
+            <h2 class="text-3xl font-bold text-gray-800">Portfolio</h2>
+            <p class="text-gray-600 mt-2">Explore some of our creative work.</p>
+        </div>
+    
+        <div x-data="{ activeSlide: 0, slides: 5, timer: null }" 
+             x-init="timer = setInterval(() => activeSlide = (activeSlide + 1) % slides, 3000)"
+             class="max-w-5xl mx-auto relative group">
+            
+            <div class="relative overflow-hidden ">
+                <div class="flex transition-transform duration-500 ease-in-out"
+                     :style="`transform: translateX(-${activeSlide * 100}%)`">
+                    <img src="https://img.freepik.com/premium-vector/hand-drawn-good-vibes-cartoon-background_23-2151634688.jpg" class="min-w-full h-[35rem] object-contain"
+                    alt="Slide 1">
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-cartoon-wizard-illustration_52683-147516.jpg?t=st=1743573328~exp=1743576928~hmac=fe384144b67e4b44e17396793d1de03cc7e45a7791b013a6826edcc53c7a0af4"class="min-w-full h-[35rem] object-contain"
+                    alt="Slide 2">
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-trendy-cartoon-background_23-2149090745.jpg?t=st=1743573328~exp=1743576928~hmac=4c434638bb2d7c496098c7453fbbf0ba452f734b143d6066d5b5fb43b14fe3e6" class="min-w-full h-[35rem] object-contain"
+                    alt="Slide 3">
+                    <img src="https://img.freepik.com/free-vector/hand-drawn-trendy-cartoon-background_23-2149090745.jpg?t=st=1743573328~exp=1743576928~hmac=4c434638bb2d7c496098c7453fbbf0ba452f734b143d6066d5b5fb43b14fe3e6" class="min-w-full h-[35rem] object-contain"
+                    alt="Slide 4">
+                    <img src="https://img.freepik.com/free-vector/pop-art-colorful-seamless-pattern_225004-816.jpg?t=st=1743573328~exp=1743576928~hmac=299d0c0db3237c9c4154bd538d9a8ed41991a2ed045354dd3db5ca4b8252246c" class="min-w-full h-[35rem] object-contain"
+                    alt="Slide 5">
+                </div>
+            </div>
+    
+            <!-- Left Arrow -->
+            <button @click="activeSlide = (activeSlide - 1 + slides) % slides; clearInterval(timer)"
+                    class="absolute top-1/2 left-4 -translate-y-1/2 bg-white/50 hover:bg-white/70 rounded-full p-2.5 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+            </button>
+    
+            <!-- Right Arrow -->
+            <button @click="activeSlide = (activeSlide + 1) % slides; clearInterval(timer)"
+                    class="absolute top-1/2 right-4 -translate-y-1/2 bg-white/50 hover:bg-white/70 rounded-full p-2.5 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+    
+            <!-- Dots Navigation -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                <template x-for="i in slides" :key="i">
+                    <button @click="activeSlide = i - 1; clearInterval(timer)"
+                            class="w-3 h-3 rounded-full transition-colors"
+                            :class="activeSlide === i - 1 ? 'bg-white' : 'bg-white/50'">
+                    </button>
+                </template>
+            </div>
+        </div>
+    
+        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    </section>
 
+    <section class="">
+        <div class="w-full mx-auto border border-black">
+            <div class="grid grid-cols-1 md:grid-cols-2 h-[45rem] w-full">
+                
+                <!-- Left Image Section -->
+                <div class="flex justify-center items-center p-8 h-full">
+                    <img src="https://img.freepik.com/free-photo/young-beautiful-girl-posing-black-leather-jacket-park_1153-8104.jpg" 
+                         alt="Founder" 
+                         class="w-[45%] rounded-md shadow-lg">
+                </div>
+    
+                <!-- Right Content Section -->
+                <div class="relative bg-cover bg-center p-10 flex flex-col justify-center text-white h-full"
+                    style="background-image: url('your-blurred-background-image.jpg');">
+                    <div class="absolute inset-0 bg-black/40"></div> <!-- Dark overlay -->
+                    
+                    <div class="relative z-10">
+                        <h3 class="text-xs tracking-widest uppercase font-light">Meet the Founder</h3>
+                        <p class="mt-4 text-sm leading-relaxed">
+                            Hi! I'm <span class="font-bold">Meher</span>, the Founder and Creative Director at 
+                            <span class="font-bold">Starline Creative</span> — a design studio dedicated to helping ambitious 
+                            <span class="text-[#E3BFA8]">creatives and industry leaders</span> elevate their brands to a premium level.
+                            I specialize in crafting luxury brands and websites that authentically reflect the essence of 
+                            your business and attract your ideal clients.
+                        </p>
+        
+                        <p class="mt-6 text-lg italic font-light">
+                            "I want to see more <span class="font-semibold">women-owned BIPOC brands</span> make their 
+                            mark in the world of business."
+                        </p>
+        
+                        <button class="mt-6 px-6 py-2 border border-white text-white text-sm uppercase tracking-wider hover:bg-white hover:text-black transition">
+                            About Me
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <!-- Small Heading -->
+            <p class="text-xs tracking-widest uppercase text-gray-500">Fully customizable. Drag & drop. Easy to edit.</p>
+            
+            <!-- Main Heading -->
+            <h2 class="text-3xl font-medium mt-2">Shop Website Templates</h2>
+    
+            <!-- Carousel Wrapper -->
+            <div x-data="{ activeSlide: 0, slides: 5 }" 
+                 x-init="setInterval(() => activeSlide = (activeSlide + 1) % slides, 3000)" 
+                 class="relative overflow-hidden w-full max-w-4xl mx-auto mt-10">
+    
+                <!-- Slides Container -->
+                <div class="flex transition-transform duration-500 ease-in-out"
+                     :style="'transform: translateX(-' + activeSlide * 100 + '%)'">
+                    
+                    <!-- Image Slides (Add your own images here) -->
+                    <img src="https://img.freepik.com/free-psd/landing-page-minimal-style-art-gallery-with-man_23-2148821375.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid" class="min-w-full rounded-lg shadow-lg" alt="Template 1">
+                    <img src="https://img.freepik.com/free-psd/flat-design-plant-care-landing-page_23-2150291375.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid" class="min-w-full rounded-lg shadow-lg" alt="Template 2">
+                    <img src="https://img.freepik.com/free-psd/forests-day-landing-page-template-with-photo_23-2148881411.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid" class="min-w-full rounded-lg shadow-lg" alt="Template 3">
+                    <img src="https://img.freepik.com/free-psd/design-agency-web-template_23-2148975466.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid" class="min-w-full rounded-lg shadow-lg" alt="Template 4">
+                    <img src="https://img.freepik.com/free-psd/hiking-concept-with-girl-landing-page_23-2148471457.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid" class="min-w-full rounded-lg shadow-lg" alt="Template 5">
+                </div>
+    
+                <!-- Navigation Dots -->
+                <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    <template x-for="i in slides">
+                        <button @click="activeSlide = i - 1"
+                                class="w-3 h-3 rounded-full transition-colors"
+                                :class="activeSlide === i - 1 ? 'bg-black' : 'bg-gray-400'">
+                        </button>
+                    </template>
+                </div>
+            </div>
+    
+            <!-- Button -->
+            <button class="mt-8 px-8 py-3 border border-black text-sm uppercase tracking-wider hover:bg-black hover:text-white transition">
+                View Templates
+            </button>
+        </div>
+        <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
+    </section>
+    <div class="border border-1 border-black w-full "></div>
+
+    <!-- Add Alpine.js for interactivity -->
+    <section class="py-16 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <!-- Heading -->
+            <h2 class="text-3xl font-medium mb-2">Services & Investment Guide</h2>
+            <div class="text-lg mb-4">✦</div>
+            <p class="text-gray-600 text-sm md:text-base">
+                Learn more about the services and packages we offer including the investment and deliverables for each.
+            </p>
+    
+            <!-- Form -->
+            <form class="mt-6 max-w-md mx-auto">
+                <input type="text" placeholder="Name"
+                    class="w-full mb-4 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-black transition">
+                <input type="email" placeholder="Email"
+                    class="w-full mb-4 p-3 border border-gray-300 rounded-md focus:outline-none focus:border-black transition">
+                
+                <!-- Button -->
+                <button class="px-6 py-3 bg-black text-white text-sm uppercase rounded-md hover:bg-gray-800 transition">
+                    Submit
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <footer class="bg-black text-white w-full lg:px-20">
+        <!-- Top Section with CTA -->
+        <div class="text-center pb-10 border-b border-gray-700 mt-5">
+            <h2 class="text-2xl md:text-4xl font-light uppercase">
+                LET'S CAPTURE <em>the</em> <br> HEART <em>of your</em> BRAND
+            </h2>
+            <a href="#" class="mt-4 inline-block text-sm uppercase tracking-wider text-[#E3BFA8] hover:underline">
+                Inquire Now →
+            </a>
+        </div>
+    
+        <!-- Middle Section: Branding -->
+        <div class="text-center italic text-sm py-6 border-b border-gray-700">
+            Building luxury brands & website designs for ambitious creatives & industry leaders
+        </div>
+    
+        <!-- Bottom Section: Footer Grid with Vertical Borders -->
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 divide-x divide-gray-700 pt-10">
+            <!-- Left: Branding -->
+            <div class="text-center md:text-left px-6">
+                <h3 class="text-3xl font-light">STARLINE <span class="italic">creative</span></h3>
+                <div class="mt-4">
+                    <button class="px-4 py-2 border border-white text-white text-xs uppercase hover:bg-white hover:text-black transition">
+                        Design Partner
+                    </button>
+                </div>
+                <p class="mt-6 text-xs italic text-gray-400">info@starlinecreative.co</p>
+            </div>
+    
+            <!-- Center: Navigation & Services -->
+            <div class="flex justify-center space-x-12 px-6">
+                <div>
+                    <h4 class="uppercase text-sm tracking-wide text-gray-400">Navigation</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">About</a></li>
+                        <li><a href="#" class="hover:underline">Portfolio</a></li>
+                        <li><a href="#" class="hover:underline">Book Now</a></li>
+                        <li><a href="#" class="hover:underline">Shop Web Templates</a></li>
+                    </ul>
+                </div>
+    
+                <div>
+                    <h4 class="uppercase text-sm tracking-wide text-gray-400">Services</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li><a href="#" class="hover:underline">Brand & Website</a></li>
+                        <li><a href="#" class="hover:underline">Hire Me for a Day</a></li>
+                        <li><a href="#" class="hover:underline">Template Customization</a></li>
+                        <li><a href="#" class="hover:underline">Mini Brand Package</a></li>
+                    </ul>
+                </div>
+            </div>
+    
+            <!-- Right: Resources -->
+            <div class="px-6">
+                <h4 class="uppercase text-sm tracking-wide text-gray-400">Resources</h4>
+                <ul class="mt-2 space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Referral Program</a></li>
+                    <li><a href="#" class="hover:underline">Freebies</a></li>
+                    <li><a href="#" class="hover:underline">Giving Back</a></li>
+                    <li><a href="#" class="hover:underline">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    
+        <!-- Bottom Bar -->
+        <div class="mt-10 border-t border-gray-700 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400 pt-6">
+            <p>Copyright © 2023 Starline Creative</p>
+            <div class="flex space-x-4">
+                <a href="#" class="hover:text-white">Instagram</a>
+                <a href="#" class="hover:text-white">Pinterest</a>
+                <a href="#" class="hover:text-white">Facebook</a>
+            </div>
+            <a href="#" class="uppercase tracking-wider hover:underline">Back to Top ↑</a>
+        </div>
+    </footer>
+    
+    
     <script>
         // Image slideshow functionality
         let currentIndex = 1;
@@ -292,7 +646,20 @@
             document.getElementById(sectionId).classList.remove('hidden');
         }
 
+        var swiper = new Swiper(".mySwiper", {
+            loop: true, // Infinite loop
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </body>
 
 </html>
