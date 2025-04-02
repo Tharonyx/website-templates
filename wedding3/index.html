@@ -1,3 +1,4 @@
+<!-- Main Content -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding3 - Wedding Planning Assistant</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Include Font Awesome for social media icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="bg-black text-white flex flex-col items-center justify-center">
+<body class="bg-black text-white flex flex-col items-center justify-center w-full">
 
     <!-- Full-Screen First Section -->
     <section class="relative w-full h-screen bg-black">
@@ -20,214 +19,211 @@
                 alt="Wedding Background" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
         </div>
-
-        <!-- Sidebar Navigation (Rotated) -->
-        <div
-            class="absolute left-12 top-1/2 -translate-y-1/2 flex flex-col h-[50vh] justify-between text-sm text-white/80 tracking-widest">
-            <a href="/" class="transform -rotate-90 origin-left hover:text-white transition mb-24">WEDDING PLANNING</a>
-            <a href="/" class="transform -rotate-90 origin-left hover:text-white transition">PHOTOGRAPHY SERVICES</a>
-            <a href="/" class="transform -rotate-90 origin-left hover:text-white transition">CATERING</a>
+    
+        <!-- Sidebar Navigation (Hidden on Mobile) -->
+        <div class="hidden md:flex absolute left-12 top-1/2 -translate-y-1/2 flex-col h-[50vh] justify-between text-sm text-white/80 tracking-widest z-50">
+            <a href="#service" class="transform -rotate-90 origin-left hover:text-white transition mb-24 cursor-pointer">
+                WEDDING PLANNING
+            </a>
+            <a href="#pictures" class="transform -rotate-90 origin-left hover:text-white transition cursor-pointer">
+                PHOTOGRAPHY SERVICES
+            </a>
+            <a href="#team" class="transform -rotate-90 origin-left hover:text-white transition cursor-pointer">
+                CATERING
+            </a>
         </div>
-
+    
+        <!-- Hamburger Menu (Mobile) -->
+        <div class="md:hidden absolute top-6 left-6 z-50">
+            <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    
+        <!-- Mobile Navigation Menu (Initially Hidden) -->
+        <div id="mobile-menu"
+            class="hidden absolute top-16 left-0 w-full bg-black text-white flex flex-col items-center space-y-4 py-6 z-50">
+            <a href="#service" class="hover:text-gray-400">Wedding Planning</a>
+            <a href="#pictures" class="hover:text-gray-400">Photography Services</a>
+            <a href="#team" class="hover:text-gray-400">Catering</a>
+        </div>
+    
         <!-- Main Content -->
-        <!DOCTYPE html>
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Wedding3 - Wedding Planning Assistant</title>
-            <script src="https://cdn.tailwindcss.com"></script>
-        </head>
-
-        <body class="bg-black text-white flex flex-col items-center justify-center px-12 md:px-20">
-
-            <!-- Full-Screen First Section -->
-            <section class="relative w-full h-screen bg-black">
-                <!-- Background Image -->
-                <div class="absolute inset-0">
-                    <img src="https://images.pexels.com/photos/8845844/pexels-photo-8845844.jpeg?auto=compress&cs=tinysrgb&w=1920&lazy=load"
-                        alt="Wedding Background" class="w-full h-full object-cover">
-                    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-                </div>
-
-                <!-- Sidebar Navigation (Rotated) -->
-                <div
-                    class="absolute left-12 top-1/2 -translate-y-1/2 flex flex-col h-[50vh] justify-between text-sm text-white/80 tracking-widest">
-                    <a href="#" class="transform -rotate-90 origin-left hover:text-white transition mb-24">WEDDING
-                        PLANNING</a>
-                    <a href="#" class="transform -rotate-90 origin-left hover:text-white transition">PHOTOGRAPHY
-                        SERVICES</a>
-                    <a href="#" class="transform -rotate-90 origin-left hover:text-white transition">CATERING</a>
-                </div>
-
-
-                <div class="relative flex flex-col items-center justify-center h-screen text-center">
-                    <div>
-                        <h1 class="text-6xl md:text-7xl font-serif font-bold text-white leading-tight">
-                            Wedding Planning 
-                            <br> 
-                            Assistant
-                        </h1>
-                    </div>
-                    <div>
-                        <p class="mt-4 text-lg md:text-2xl text-gray-300 max-w-md leading-relaxed">
-                            Your one-stop-shop agency to create the dream celebration.
-                        </p>
-                    </div>
-                </div>
-                
-            </section>
-
-            <!-- Our Services Section (Below First Section) -->
-            <section class="w-full bg-black text-white py-16">
-                <div class="max-w-screen-lg mx-auto px-6">
-                    <h2 class="text-4xl font-bold text-center mb-8">Our Services</h2>
-                    <div class="grid md:grid-cols-2 gap-8">
-                        <!-- Service 1 -->
-                        <div class=" p-6 rounded-lg shadow-md">
-                            <h3 class="text-2xl font-semibold mb-4">Wedding Planning</h3>
-                            <p class="text-gray-300 mb-6">
-                                Let us handle the details: our comprehensive wedding planning service takes the stress
-                                out of your big day. From venue selection to timeline management and decor design.
-                            </p>
-                            <img class="h-[30rem] w-[30rem]"
-                                src="https://images.pexels.com/photos/30156898/pexels-photo-30156898/free-photo-of-romantic-floral-proposal-setup-with-neon-sign.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                alt="">
-                            <a href="#" class="text-blue-400 hover:underline">Learn More</a>
-                        </div>
-                        <!-- Service 2 -->
-                        <div class=" p-6 rounded-lg shadow-md">
-                            <h3 class="text-2xl font-semibold mb-4">Photography Services</h3>
-                            <p class="text-gray-300 mb-6">
-                                Our wedding photography services capture your special time and preserve your special
-                                moments. From candid shots to posed portraits, we create beautiful memories.
-                            </p>
-                            <img class="h-[30rem] w-[30rem]"
-                                src="https://images.pexels.com/photos/29487183/pexels-photo-29487183/free-photo-of-street-shoeshine-in-karakoy-urban-scene.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                alt="">
-                            <a href="#" class="text-blue-400 hover:underline">Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </body>
-
-        </html>
-
+        <div class="relative flex flex-col items-center justify-center h-screen text-center px-6">
+            <div>
+                <h1 class="text-5xl sm:text-6xl md:text-7xl font-serif font-bold text-white leading-tight">
+                    Wedding Planning
+                    <br>
+                    Assistant
+                </h1>
+            </div>
+            <div>
+                <p class="mt-4 text-base sm:text-lg md:text-2xl text-gray-300 max-w-md leading-relaxed">
+                    Your one-stop-shop agency to create the dream celebration.
+                </p>
+            </div>
+        </div>
     </section>
 
+
     <!-- Our Services Section (Below First Section) -->
-    <section class="w-full bg-black text-white py-16 h-[55rem]">
+    <section class="w-full bg-black text-white py-16">
         <div class="max-w-screen-lg mx-auto px-6">
             <h2 class="text-4xl font-bold text-center mb-8">Our Services</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <!-- Service 1 -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class=" p-6 rounded-lg shadow-md">
                     <h3 class="text-2xl font-semibold mb-4">Wedding Planning</h3>
                     <p class="text-gray-300 mb-6">
-                        Let us handle the details: our comprehensive wedding planning service takes the stress out of
-                        your big day. From venue selection to timeline management and decor design.
+                        Let us handle the details: our comprehensive wedding planning service takes the stress
+                        out of your big day. From venue selection to timeline management and decor design.
                     </p>
+                    <img class="h-[30rem] w-[30rem]"
+                        src="https://images.pexels.com/photos/30156898/pexels-photo-30156898/free-photo-of-romantic-floral-proposal-setup-with-neon-sign.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
                     <a href="#" class="text-blue-400 hover:underline">Learn More</a>
                 </div>
                 <!-- Service 2 -->
-                <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <div class=" p-6 rounded-lg shadow-md">
                     <h3 class="text-2xl font-semibold mb-4">Photography Services</h3>
                     <p class="text-gray-300 mb-6">
-                        Our wedding photography services capture your special time and preserve your special moments.
-                        From candid shots to posed portraits, we create beautiful memories.
+                        Our wedding photography services capture your special time and preserve your special
+                        moments. From candid shots to posed portraits, we create beautiful memories.
                     </p>
+                    <img class="h-[30rem] w-[30rem]"
+                        src="https://images.pexels.com/photos/29487183/pexels-photo-29487183/free-photo-of-street-shoeshine-in-karakoy-urban-scene.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt="">
                     <a href="#" class="text-blue-400 hover:underline">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="relative w-full bg-black text-white py-16">
-        <div class="max-w-screen-lg mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12">Portfolio</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Portfolio Item 1 -->
-                <div class="overflow-hidden rounded-lg">
-                    <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
-                        src="https://images.pexels.com/photos/8845844/pexels-photo-8845844.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Wedding Couple on Staircase">
-                </div>
-                <!-- Portfolio Item 2 -->
-                <div class="overflow-hidden rounded-lg">
-                    <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
-                        src="https://images.pexels.com/photos/30156898/pexels-photo-30156898/free-photo-of-romantic-floral-proposal-setup-with-neon-sign.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Romantic Floral Proposal Setup">
-                </div>
-                <!-- Portfolio Item 3 -->
-                <div class="overflow-hidden rounded-lg">
-                    <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
-                        src="https://images.pexels.com/photos/29487183/pexels-photo-29487183/free-photo-of-street-shoeshine-in-karakoy-urban-scene.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Candid Wedding Photography">
-                </div>
-                <!-- Portfolio Item 4 -->
-                <div class="overflow-hidden rounded-lg">
-                    <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
-                        src="https://images.pexels.com/photos/30157896/pexels-photo-30157896.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Bride Holding Bouquet">
-                </div>
-                <!-- Portfolio Item 5 -->
-                <div class="overflow-hidden rounded-lg">
-                    <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
-                        src="https://images.pexels.com/photos/29488213/pexels-photo-29488213.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Wedding Guests Celebrating">
-                </div>
-                <!-- Portfolio Item 6 -->
-                <div class="overflow-hidden rounded-lg">
-                    <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
-                        src="https://images.pexels.com/photos/2253842/pexels-photo-2253842.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Bride and Groom Scenic View">
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="w-full bg-black text-white py-16">
-        <div class="max-w-screen-lg mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12">Our Team</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Team Member 1 -->
-                <div class="text-center">
-                    <img class="w-40 h-40 rounded-full mx-auto object-cover mb-4"
-                        src="https://images.pexels.com/photos/2121122/pexels-photo-2121122.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Jenny Wilson">
-                    <h3 class="text-xl font-bold">Jenny Wilson</h3>
-                    <p class="text-gray-300">Wedding Planner</p>
-                    <p class="text-gray-400 mt-2">With years of experience in event planning, Jenny ensures every detail
-                        of your wedding day is perfect, from the big ideas to the smallest details.</p>
-                </div>
-                <!-- Team Member 2 -->
-                <div class="text-center">
-                    <img class="w-40 h-40 rounded-full mx-auto object-cover mb-4"
-                        src="https://images.pexels.com/photos/29905591/pexels-photo-29905591/free-photo-of-vintage-elegance-woman-with-pearls-and-lace.png?auto=compress&cs=tinysrgb&w=600"
-                        alt="Theresa Webb">
-                    <h3 class="text-xl font-bold">Theresa Webb</h3>
-                    <p class="text-gray-300">Photographer</p>
-                    <p class="text-gray-400 mt-2">Theresa specializes in capturing candid moments and the emotions of
-                        the day, making sure your wedding memories are preserved beautifully.</p>
-                </div>
-                <!-- Team Member 3 -->
-                <div class="text-center">
-                    <img class="w-40 h-40 rounded-full mx-auto object-cover mb-4"
-                        src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt="Robert Fox">
-                    <h3 class="text-xl font-bold">Robert Fox</h3>
-                    <p class="text-gray-300">Catering Specialist</p>
-                    <p class="text-gray-400 mt-2">Robert brings his culinary expertise to create exquisite and delicious
-                        menus for your wedding, ensuring every guest leaves satisfied.</p>
-                </div>
+
+<!-- Our Services Section (Below First Section) -->
+<section class="w-full bg-black text-white py-16" id="service">
+    <div class="max-w-screen-lg mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-8">Our Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold mb-4">Wedding Planning</h3>
+                <p class="text-gray-300 mb-6">
+                    Let us handle the details: our comprehensive wedding planning service takes the stress out of
+                    your big day. From venue selection to timeline management and decor design.
+                </p>
+                <a href="#" class="text-blue-400 hover:underline">Learn More</a>
+            </div>
+            <!-- Service 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold mb-4">Photography Services</h3>
+                <p class="text-gray-300 mb-6">
+                    Our wedding photography services capture your special time and preserve your special moments.
+                    From candid shots to posed portraits, we create beautiful memories.
+                </p>
+                <a href="#" class="text-blue-400 hover:underline">Learn More</a>
+            </div>
+            <!-- Service 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold mb-4">Catering Services</h3>
+                <p class="text-gray-300 mb-6">
+                    From exquisite multi-course meals to elegant buffets, our catering team ensures your wedding
+                    menu delights every guest with premium ingredients and flavors.
+                </p>
+                <a href="#" class="text-blue-400 hover:underline">Learn More</a>
             </div>
         </div>
-    </section>
-    <!-- Footer Section -->
+    </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="relative w-full bg-black text-white py-16" id="Pictures">
+    <div class="max-w-screen-lg mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Portfolio</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Portfolio Item 1 -->
+            <div class="overflow-hidden rounded-lg">
+                <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
+                    src="https://images.pexels.com/photos/8845844/pexels-photo-8845844.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Wedding Couple on Staircase">
+            </div>
+            <!-- Portfolio Item 2 -->
+            <div class="overflow-hidden rounded-lg">
+                <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
+                    src="https://images.pexels.com/photos/30156898/pexels-photo-30156898/free-photo-of-romantic-floral-proposal-setup-with-neon-sign.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Romantic Floral Proposal Setup">
+            </div>
+            <!-- Portfolio Item 3 -->
+            <div class="overflow-hidden rounded-lg">
+                <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
+                    src="https://images.pexels.com/photos/29487183/pexels-photo-29487183/free-photo-of-street-shoeshine-in-karakoy-urban-scene.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Candid Wedding Photography">
+            </div>
+            <!-- Portfolio Item 4 -->
+            <div class="overflow-hidden rounded-lg">
+                <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
+                    src="https://images.pexels.com/photos/30157896/pexels-photo-30157896.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Bride Holding Bouquet">
+            </div>
+            <!-- Portfolio Item 5 -->
+            <div class="overflow-hidden rounded-lg">
+                <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
+                    src="https://images.pexels.com/photos/29488213/pexels-photo-29488213.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Wedding Guests Celebrating">
+            </div>
+            <!-- Portfolio Item 6 -->
+            <div class="overflow-hidden rounded-lg">
+                <img class="w-full h-64 object-cover hover:scale-105 transform transition duration-300"
+                    src="https://images.pexels.com/photos/2253842/pexels-photo-2253842.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Bride and Groom Scenic View">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="w-full bg-black text-white py-16" id="team">
+    <div class="max-w-screen-lg mx-auto px-6">
+        <h2 class="text-4xl font-bold text-center mb-12">Our Team</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Team Member 1 -->
+            <div class="text-center">
+                <img class="w-40 h-40 rounded-full mx-auto object-cover mb-4"
+                    src="https://images.pexels.com/photos/2121122/pexels-photo-2121122.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Jenny Wilson">
+                <h3 class="text-xl font-bold">Jenny Wilson</h3>
+                <p class="text-gray-300">Wedding Planner</p>
+                <p class="text-gray-400 mt-2">With years of experience in event planning, Jenny ensures every detail
+                    of your wedding day is perfect, from the big ideas to the smallest details.</p>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="text-center">
+                <img class="w-40 h-40 rounded-full mx-auto object-cover mb-4"
+                    src="https://images.pexels.com/photos/29905591/pexels-photo-29905591/free-photo-of-vintage-elegance-woman-with-pearls-and-lace.png?auto=compress&cs=tinysrgb&w=600"
+                    alt="Theresa Webb">
+                <h3 class="text-xl font-bold">Theresa Webb</h3>
+                <p class="text-gray-300">Photographer</p>
+                <p class="text-gray-400 mt-2">Theresa specializes in capturing candid moments and the emotions of
+                    the day, making sure your wedding memories are preserved beautifully.</p>
+            </div>
+            <!-- Team Member 3 -->
+            <div class="text-center">
+                <img class="w-40 h-40 rounded-full mx-auto object-cover mb-4"
+                    src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="Robert Fox">
+                <h3 class="text-xl font-bold">Robert Fox</h3>
+                <p class="text-gray-300">Catering Specialist</p>
+                <p class="text-gray-400 mt-2">Robert brings his culinary expertise to create exquisite and delicious
+                    menus for your wedding, ensuring every guest leaves satisfied.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Footer Section -->
 <footer class="w-full text-white py-8">
     <div class="max-w-screen-lg mx-auto px-6">
         <!-- Footer Content -->
@@ -239,19 +235,23 @@
                 <p class="text-gray-400">Email: contact@wedding3.com</p>
                 <p class="text-gray-400">Phone: +123 456 7890</p>
             </div>
-            
+
             <!-- Social Media Links -->
             <div class="flex gap-4">
-                <a href="https://www.facebook.com/yourpage" target="_blank" class="text-gray-400 hover:text-white transition">
+                <a href="https://www.facebook.com/yourpage" target="_blank"
+                    class="text-gray-400 hover:text-white transition">
                     <i class="fab fa-facebook-f"></i> <!-- Facebook Icon -->
                 </a>
-                <a href="https://twitter.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition">
+                <a href="https://twitter.com/yourprofile" target="_blank"
+                    class="text-gray-400 hover:text-white transition">
                     <i class="fab fa-twitter"></i> <!-- Twitter Icon -->
                 </a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition">
+                <a href="https://www.instagram.com/yourprofile" target="_blank"
+                    class="text-gray-400 hover:text-white transition">
                     <i class="fab fa-instagram"></i> <!-- Instagram Icon -->
                 </a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="text-gray-400 hover:text-white transition">
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank"
+                    class="text-gray-400 hover:text-white transition">
                     <i class="fab fa-linkedin-in"></i> <!-- LinkedIn Icon -->
                 </a>
             </div>
@@ -263,7 +263,12 @@
         </div>
     </div>
 </footer>
-
+<script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+        var menu = document.getElementById("mobile-menu");
+        menu.classList.toggle("hidden");
+    });
+</script>
 </body>
 
 </html>

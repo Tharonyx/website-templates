@@ -26,12 +26,12 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-6 text-white">
-                <a href="#" class="hover:underline">Home</a>
-                <a href="#" class="hover:underline">Plan</a>
-                <a href="#" class="hover:underline">Services</a>
-                <a href="#" class="hover:underline">Albums</a>
-                <a href="#" class="hover:underline">Portfolio</a>
-                <a href="#" class="hover:underline">Contact Us</a>
+                <a href="#Home" class="hover:underline">Home</a>
+                <a href="#plan" class="hover:underline">Plan</a>
+                <a href="#Home" class="hover:underline">Services</a>
+                <a href="#album" class="hover:underline">Albums</a>
+                <a href="#Portfolio" class="hover:underline">Portfolio</a>
+                <a href="#contact" class="hover:underline">Contact Us</a>
             </div>
 
             <!-- Book Now Button -->
@@ -52,12 +52,12 @@
         <div id="mobile-menu" class="hidden fixed inset-0 bg-black bg-opacity-90 flex flex-col items-center justify-center space-y-6 text-white text-lg">
             <!-- Close Button Inside -->
             <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">&times;</button>
-            <a href="#" class="hover:bg-gray-700 px-4 py-2 rounded">Home</a>
-            <a href="#" class="hover:bg-gray-700 px-4 py-2 rounded">Plan</a>
-            <a href="#" class="hover:bg-gray-700 px-4 py-2 rounded">Services</a>
-            <a href="#" class="hover:bg-gray-700 px-4 py-2 rounded">Albums</a>
-            <a href="#" class="hover:bg-gray-700 px-4 py-2 rounded">Portfolio</a>
-            <a href="#" class="hover:bg-gray-700 px-4 py-2 rounded">Contact Us</a>
+            <a href="#Home" class="hover:bg-gray-700 px-4 py-2 rounded">Home</a>
+            <a href="#plan" class="hover:bg-gray-700 px-4 py-2 rounded">Plan</a>
+            <a href="#Home" class="hover:bg-gray-700 px-4 py-2 rounded">Services</a>
+            <a href="#album" class="hover:bg-gray-700 px-4 py-2 rounded">Albums</a>
+            <a href="#Portfolio" class="hover:bg-gray-700 px-4 py-2 rounded">Portfolio</a>
+            <a href="#contact" class="hover:bg-gray-700 px-4 py-2 rounded">Contact Us</a>
             <button class="border border-white text-white px-4 py-2 mt-4 rounded-full hover:bg-white hover:text-black">
                 Book Now
             </button>
@@ -75,7 +75,7 @@
     </header>
 
     <!-- About Section -->
-    <section class="py-16 px-6 bg-white">
+    <section class="py-16 px-6 bg-white" id="Home">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-center text-4xl font-bold mb-4">About Company</h2>
 
@@ -195,7 +195,7 @@
     </section>
 
     <!-- Blog Section -->
-<section class="py-16 px-6 bg-gradient-to-r from-gray-100 to-white">
+<section class="py-16 px-6 bg-gradient-to-r from-gray-100 to-white" id="Portfolio">
     <div class="max-w-6xl mx-auto text-center">
         
         <!-- Heading with Decorative Line -->
@@ -252,7 +252,7 @@
     </div>
 </section>
 
-<section class="py-16 bg-gray-100">
+<section class="py-16 bg-gray-100" id="album">
     <div class="max-w-6xl mx-auto text-center">
       <!-- Styled Section Heading -->
       <div class="relative inline-block">
@@ -291,7 +291,7 @@
   
 
 <!-- Pricing Section -->
-<section class="py-16 px-6 bg-white">
+<section class="py-16 px-6 bg-white" id="plan">
     <div class="max-w-6xl mx-auto text-center">
         
         <!-- Heading with Decorative Line -->
@@ -369,7 +369,7 @@
     </div>
 </section>
 
-<footer class="bg-gray-100 py-12 px-6">
+<footer class="bg-gray-100 py-12 px-6" id="contact">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
       <div>
         <h3 class="text-sm text-orange-600 font-semibold tracking-wide">CONTACT US</h3>

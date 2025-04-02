@@ -105,21 +105,46 @@
 
 <body class="min-h-screen bg-custom-beige text-black flex flex-col items-center justify-start">
     <!-- Navigation Bar -->
-    <nav class="w-full bg-transparent flex justify-between p-6 text-sm fixed top-0 left-0 z-10">
+    <nav class="w-full bg-transparent flex justify-between items-center p-6 text-sm fixed top-0 left-0 z-10">
+        <!-- Logo -->
         <div class="text-black font-bold">Starline</div>
-        <div class="flex space-x-20">
+    
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-12">
             <a href="#" class="hover:text-blue-500">ABOUT</a>
-            <a href="#" class="hover:text-blue-500">SERVICES</a>
-            <a href="#" class="hover:text-blue-500">PORTFOLIO</a>
-            <a href="#" class="hover:text-blue-500">SHOP</a>
-            <button class=" text-black py-2 px-6 border border-1 border-black">
+            <a href="#about" class="hover:text-blue-500">SERVICES</a>
+            <a href="#Portfolio" class="hover:text-blue-500">PORTFOLIO</a>
+            <a href="#shop" class="hover:text-blue-500">SHOP</a>
+            <button class="text-black py-2 px-6 border border-black">
+                BOOK NOW
+            </button>
+        </div>
+    
+        <!-- Hamburger Menu (Mobile) -->
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-black focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    
+        <!-- Mobile Menu (Initially Hidden) -->
+        <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white text-black flex flex-col items-center space-y-4 py-6 shadow-lg z-50">
+            <a href="#" class="hover:text-blue-500">ABOUT</a>
+            <a href="#about" class="hover:text-blue-500">SERVICES</a>
+            <a href="#Portfolio" class="hover:text-blue-500">PORTFOLIO</a>
+            <a href="#shop" class="hover:text-blue-500">SHOP</a>
+            <button class="text-black py-2 px-6 border border-black">
                 BOOK NOW
             </button>
         </div>
     </nav>
-
+    
     <!-- Main Section -->
-    <section class="mt-24 w-full">
+    <section class="mt-24 w-full" >
         <div class="border border-1 border-black w-full"></div>
 
         <div class="flex flex-col md:flex-row max-w-screen-lg  items-center">
@@ -157,7 +182,7 @@
     </section>
 
     <!-- Next Section -->
-    <section class="relative text-black w-full bg-[url('https://img.freepik.com/free-photo/blurred-picture-kissing-wedding-couple-standing-before-gorgeous-mountain-landscape_8353-8491.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid')] bg-cover bg-center bg-no-repeat">
+    <section class="relative text-black w-full bg-[url('https://img.freepik.com/free-photo/blurred-picture-kissing-wedding-couple-standing-before-gorgeous-mountain-landscape_8353-8491.jpg?ga=GA1.1.850128080.1734519934&semt=ais_hybrid')] bg-cover bg-center bg-no-repeat" id="about">
         <!-- Overlay for Orangish Shade -->
         <div class="absolute inset-0 bg-orange-100 opacity-40"></div>
     
@@ -322,7 +347,7 @@
     </section>
 
 
-    <section class="text-black py-16">
+    <section class="text-black py-16" id="Portfolio">
         <div class="max-w-screen-lg mx-auto px-6 flex flex-col md:flex-row items-center md:items-start">
             <!-- Left Section: Heading & Description -->
             <div class="md:w-1/3 text-left">
@@ -470,7 +495,7 @@
             </div>
         </div>
     </section>
-    <section class="py-16 px-6">
+    <section class="py-16 px-6" id="shop">
         <div class="max-w-6xl mx-auto text-center">
             <!-- Small Heading -->
             <p class="text-xs tracking-widest uppercase text-gray-500">Fully customizable. Drag & drop. Easy to edit.</p>
@@ -656,6 +681,13 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+        });
+        
+    </script>
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function () {
+            var menu = document.getElementById("mobile-menu");
+            menu.classList.toggle("hidden");
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
